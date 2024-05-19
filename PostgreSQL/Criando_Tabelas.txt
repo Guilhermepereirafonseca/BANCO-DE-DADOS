@@ -1,0 +1,53 @@
+/* 
+ - Fazemos banco de dados para total segurança e organização 
+ para seu programa, site ou servidor. 
+
+  
+
+- Banco so manipulamos quando necessário. 
+
+  
+
+Comandos: 
+ ---- 
+
+CREATE TABLE = Cria uma tabela. 
+ PRIMARY KEY/PK = Chave primária. 
+ FOREIGN KEY/FK = Chave estrangeira. 
+ CONSTRAINT = Validação (será que existe?/isso realmente existe). 
+ REFERENCES = Referenciar. 
+
+--- 
+ */ 
+ CREATE TABLE TipoCliente ( 
+	id_tipo_Cliente SERIAL PRIMARY KEY, -- o proprio SGBD irá gerar o código 
+	nome_tipo_cliente VARCHAR(50) 
+) 
+
+CREATE TABLE Cliente  ( 
+	id_cliente_CPF INTEGER PRIMARY KEY, 
+	telefone_Cliente VARCHAR(15), 
+	nome_cliente VARCHAR(100), 
+	endereco_cliente VARCHAR(255), 
+	fk_TipoCliente_id_tipo_Cliente INTEGER, 
+	FOREIGN KEY (fk_TipoCliente_id_tipo_Cliente) REFERENCES TipoCliente(id_tipo_Cliente)  
+) 
+
+CREATE TABLE TipoProduto ( 
+	id_tipo_produto SERIAL PRIMARY KEY, -- o proprio SGBD irá gerar o código 
+	nome_tipo_produto VARCHAR(50) 
+) 
+
+CREATE TABLE Produto ( 
+	codigo_barras INTEGER PRIMARY KEY, 
+	nome_produto DECIMAL(10, 2), 
+	fk_TipoProduto_id_tipo_produto INTEGER, 
+	FOREIGN KEY (fk_TipoProduto_id_tipo_produto) REFERENCES TipoProduto(id_tipo_produto) 
+) 
+
+CREATE TABLE Pedido ( 
+	id_pedido SERIAL PRIMARY KEY, 
+	data_pedido DATE, 
+	fl_Cliente_id_cliente_CPF INTEGER, 
+	FOREIGN KEY (fk_Cliend_id_cliente_CPF) REFERENCES Cliente(id_cliente_CPF) 
+) 
