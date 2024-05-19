@@ -21,3 +21,8 @@
 13. ORDER BY ASC, DESC
 > <b> ASC e do MENOR para MAIOR, DESC do MAIOR para MENOR </b>
 14. RENAME TO
+
+<img src="https://www.techasoft.com/debug/img/oracle.png" width="100px">
+
+## ORACLE
+✔️ Conceitos Aprendidos:
