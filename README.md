@@ -24,8 +24,3 @@
 14. RENAME TO
 15. JOIN
 16. SET
-
-<img src="https://www.techasoft.com/debug/img/oracle.png" width="100px">
-
-## ORACLE
-✔️ Conceitos Aprendidos:
